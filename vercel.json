@@ -1,0 +1,7 @@
+{
+  "installCommand": "node -v && npm -v && npm ci || npm install",
+  "buildCommand": "node -v && npm -v && npm run build",
+  "outputDirectory": "build",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
+

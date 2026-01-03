@@ -1,0 +1,73 @@
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 991px ****************************************/
+
+@media screen and (min-width: 992px) {
+
+    /**********************************************************************************************/
+    /***************************************** pages-headers **************************************/
+    /**********************************************************************************************/
+
+    .underline {
+        width: 340px;
+    }
+}
+
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 1199px ****************************************/
+
+@media screen and (min-width: 1200px) {
+
+    /**********************************************************************************************/
+    /***************************************** pages-headers **************************************/
+    /**********************************************************************************************/
+
+    .title-container {
+        padding-top: 3.33vw;
+        padding-bottom: 5vw;
+    }
+    
+    h2 {
+        font-size: 2vw;
+        letter-spacing: .05vw;
+    }
+
+    h2 > span {
+        font-size: 2.7vw;
+        letter-spacing: .07vw;
+    }
+    
+    h3 {
+        font-size: 1.4vw; 
+        line-height: 2.4vw;
+        letter-spacing: .14vw;
+    }
+    
+    .underline {
+        width: 35vw;
+        height: .30vw;
+    }
+
+    .under1 {
+         margin-top: 5vw;
+    }
+
+    .under2 {
+        margin-top: 7vw;
+    }
+    
+    .paragraph {
+        margin-top: 7.5vw;
+        margin-left: 18vw;
+        margin-right: 18vw;
+        font-size: 1.4vw;
+        line-height: 2.16vw;
+        letter-spacing: .08vw;
+    }
+
+    .sub-title-text {
+        font-size: 1.56vw;
+        line-height: 2.8vw;
+        letter-spacing: .05vw;
+        font-weight: 500;
+    }
+}

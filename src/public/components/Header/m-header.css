@@ -1,0 +1,280 @@
+/**********************************************************************************************/
+/********************************************* header *****************************************/
+/**********************************************************************************************/
+
+.navbar {
+	position: relative;
+    width: auto;
+	transition: background-color 2s;
+	z-index: 1;
+}
+
+.navbar-closed {
+	height: 25vw;
+	background: linear-gradient(rgb(4, 25, 35), rgb(11, 63, 89));
+	border-bottom: .5px solid rgba(36, 190, 246, .5);
+	transition: height .3s, background-color .8s;
+}
+ 
+.navbar-open {
+	height: 208vw;
+	background: linear-gradient(to right, rgb(4, 25, 35), rgba(11, 63, 89, .8), transparent);
+	background-color:  rgba(50, 62, 70, 0.25);
+	transition: height .4s, background-color 1.5s;
+}
+
+.navbar__logo-caravelle {
+	position: relative;
+	top: 6vw;
+	margin-left: 6vw;
+	width: 40vw;
+	height: auto;
+	z-index: -1;
+}
+
+.navbar__contact {
+	float: right;
+	margin-top: 14.2vw;
+	margin-right: 18vw;
+	font-size: 4.3vw;
+	cursor: pointer;
+	width: auto;
+	border-radius: 4px;
+	padding: .6vw 1vw .6vw 1vw;
+}
+
+.white {
+	color: white;
+	border: solid 1px white;
+	background-color: transparent;
+	transition: background-color .4s;
+}
+
+.white:hover {
+	background-color: rgb(11, 100, 156);
+	transition: background-color .4s;
+}
+
+.gray {
+	color: white;
+	border: solid 1px white;
+	background-color: transparent;
+	transition: .4s;
+}
+
+.gray:hover {
+	background-color:  rgb(11, 100, 156);
+	color: white;
+	border: solid 1px white;
+	transition: .4s;
+}
+
+.navbar__contact:active {
+	background-color: transparent;
+}
+
+.navbar__onglets {
+	display: none;
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	color: rgb(150, 150, 150);
+	cursor: pointer;
+}
+
+.white-style {
+	color: white;
+	transition: border-bottom .8s, color .8s;
+}
+
+.white-style:hover {
+	transition: border-bottom .8s;
+}
+
+.gray-style {
+	color: white;
+	transition: border-bottom .8s, color .8s;
+}
+
+.gray-style:hover {
+	color: white;
+	transition: border-bottom .8s, color .8s;
+}
+
+.navbar__square-closed,
+.cross {
+	display: none;
+}
+
+.navbar__button-x {
+	position: absolute;
+    float: right;
+    top: 14vw;
+	right: 8.7vw;
+	font-size: 6vw;
+	color: white;
+	transition: color .4s;
+	cursor: pointer;
+	z-index: 500;
+}
+
+.navbar__button-x:hover {
+	color: rgb(255, 9, 29);
+	transition: color .4s;
+}
+
+.navbar__button-bars {
+	position: absolute;
+    float: right;
+    top: 15vw;
+	right: 8.4vw;
+	font-size: 5vw;
+	color: white;
+	cursor: pointer;
+	z-index: 500;
+}
+
+.closed {
+	display: none;
+}
+
+.open {
+	display: block;
+}
+
+menu {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	top: 6vw;
+	width: 95vw;
+	overflow: hidden;
+}
+
+.navbar__menu {
+	margin-left: -4.5vw;
+}
+
+.navbar__menu-open {
+	height: 170vw;
+	transition-delay: .2s;
+	transition-duration: .25s;
+}
+
+.navbar__menu-closed {
+	height: 0;
+	transition-duration: .1s;
+}
+
+.nav__menu__link, a:link, a:visited, a:hover {
+	text-decoration: none !important;
+}
+
+.nav__menu__link {
+	position: relative;
+	line-height: 11vw;
+    padding-bottom: .5vw;
+	cursor: pointer;
+	letter-spacing: .2vw;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 4.3vw;
+	font-weight: 300;
+	color: white;
+	transition: all .3s;
+}
+
+.nav__menu__link:hover {
+	text-decoration: none;
+	padding-left: 5vw;
+	font-size: 4.5vw;
+	color: rgb(129, 207, 255);
+	transition: all .2s;
+}
+
+.mobile-only {
+	display: block;
+}
+
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 450px ****************************************/
+
+@media screen and (min-width: 451px) {
+
+    /**********************************************************************************************/
+    /********************************************* header *****************************************/
+    /**********************************************************************************************/
+	
+	.navbar-closed {
+		height: 90px;
+		border-bottom: .5px solid rgba(36, 190, 246, .5);
+	}
+	
+	.navbar-open {
+		height: 105vw;
+	}
+
+	.navbar__logo-caravelle {
+		top: 20px;
+		margin-left: 25px;
+		width: 140px;
+	}
+
+	.navbar__contact {
+		display: block;
+		margin-top: 39px;
+		margin-right: 75px;
+		font-size: 17px;
+		width: auto;
+		padding: 3px 5px 3px 5px;
+	}
+
+	.navbar__button-x {
+		top: 40px;
+		right: 40px;
+		font-size: 25px;
+	}
+	
+	.navbar__button-bars {
+		top: 42px;
+		right: 40px;
+		font-size: 20px;
+	}
+
+	.navbar__square-closed,
+	.cross {
+		display: none;
+	}
+
+	menu {
+		top: 5.5vw;
+		width: 80vw;
+	}
+	
+	.navbar__menu {
+		margin-left: 5px;
+	}
+	
+	.navbar__menu-open {
+		height: 580px;
+	}
+	
+	.nav__menu__link {
+		line-height: 4.5vw;
+		padding-bottom: 4px;
+		letter-spacing: 2px;
+		font-size: 14px;
+	}
+	
+	.nav__menu__link:hover {
+		padding-left: 60px;
+		font-size: 16px;
+	}
+
+	.navbar__onglets {
+		display: none;
+	}
+
+	.mobile-only {
+		display: block;
+	}
+}

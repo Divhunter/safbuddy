@@ -1,0 +1,283 @@
+/**********************************************************************************************/
+/********************************************** app *******************************************/
+/**********************************************************************************************/
+
+body {
+    background-color: black;
+}
+
+header,
+footer, 
+section, 
+article {
+    overflow: hidden;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/*ul, li {
+    list-style:none;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+}*/
+
+input, textarea{
+    border: 0;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+textarea {
+    border: 0;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+} 
+
+label {
+    display: none;
+}
+
+.ferme {
+    display: none;
+}
+
+.ouvert {
+    display: inline-block;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+/**********************************************************************************************/
+/************************************** programme containt ************************************/
+/**********************************************************************************************/
+
+/* Base typographique */
+.programme-containt {
+    --line: 0.9rem;              /* hauteur d’un “saut” */
+    color: rgb(196, 196, 196) !important;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.programme-containt a {
+    color: rgb(54, 178, 255) !important;
+}
+
+/* Titres (remplace <u>) */
+.programme-containt h3 {
+    text-align: left;
+    margin: 2rem 0 1rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-underline-offset: 4px;
+    text-transform: uppercase;
+    font-style: normal;
+    color: white;
+}
+
+/* Paragraphes et listes : “saut simple” par défaut */
+.programme-containt p,
+.programme-containt ul,
+.programme-containt ol {
+    margin: 0 0 var(--line);
+}
+
+/* Listes à puces */
+.programme-containt .list {
+    list-style: inside;
+    padding-left: 1.2rem;
+}
+.programme-containt .list li {
+    margin-bottom: 0.4rem;       /* espace entre items */
+}
+
+/* Utilitaires de marge pour gérer les sauts supplémentaires */
+.mb-1l { margin-bottom: var(--line) !important; }                 /* 1 saut  */
+.mb-2l { margin-bottom: calc(var(--line) * 2) !important; }       /* 2 sauts */
+.mb-3l { margin-bottom: calc(var(--line) * 3) !important; }       /* 3 sauts */
+
+/* Optionnel : style de note */
+.programme-containt .note {
+    margin-top: calc(var(--line) * 2);
+    font-style: italic;
+}
+
+/**********************************************************************************************/
+/************************************ formulaire de contact ***********************************/
+/**********************************************************************************************/
+
+/* ====== ContactForm – thème & reset léger ====== */
+.contactForm {
+  /* Thème (modifiable) */
+  --fg: rgb(196,196,196);        /* texte du formulaire (lisible sur fond noir) */
+  --muted: #9ca3af;
+  --bg: transparent;
+  --field-bg: #ffffff;
+  --border: #e5e7eb;
+  --primary: rgb(54, 178, 255);  /* bleu */
+  --primary-hover: rgb(54, 178, 255);
+  --danger: #dc2626;             /* rouge erreur */
+  --radius: 12px;
+  --gap: 16px;
+  --px: 14px;
+  --py: 12px;
+
+  margin: 0 auto;
+  color: var(--fg);
+
+  /* Stack mobile par défaut */
+  display: grid;
+  gap: var(--gap);
+}
+
+/* ⛳️ Les labels sont cachés globalement : on les ré-affiche dans le formulaire */
+.contactForm label {
+  display: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--fg);
+}
+
+.contactForm > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Champs */
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: var(--py) var(--px);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--field-bg);
+  color: #111; /* texte dans le champ (fond blanc) */
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: var(--muted);
+}
+
+.contactForm input:focus-visible,
+.contactForm textarea:focus-visible {
+  border-color: var(--primary);
+}
+
+/* Désactivé */
+.contactForm input:disabled,
+.contactForm textarea:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* Validation HTML5 (au cas où tu enlèves noValidate) */
+.contactForm input:invalid[required],
+.contactForm textarea:invalid[required] {
+  border-color: var(--danger);
+}
+
+/* ✅ États d’erreur pilotés par aria-invalid */
+.contactForm input[aria-invalid="true"],
+.contactForm textarea[aria-invalid="true"] {
+  border-color: var(--danger) !important;
+  box-shadow: none;
+}
+
+.contactForm input[aria-invalid="true"]:focus-visible,
+.contactForm textarea[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.22);
+}
+
+/* ✅ État valide : bordure + halo BLEU après saisie (champ non vide) */
+.contactForm input:not(:placeholder-shown)[aria-invalid="false"],
+.contactForm textarea:not(:placeholder-shown)[aria-invalid="false"] {
+  border-color: rgb(54, 178, 255) !important;
+  box-shadow: none;
+}
+
+.contactForm input:not(:placeholder-shown)[aria-invalid="false"]:focus-visible,
+.contactForm textarea:not(:placeholder-shown)[aria-invalid="false"]:focus-visible {
+  /* halo bleu au focus */
+  box-shadow: 0 0 0 4px rgba(54, 178, 255, .22);
+}
+
+/* Message d’erreur sous le champ */
+.contactForm small {
+  color: var(--danger);
+  font-size: .85rem;
+  font-weight: bold;
+  margin-top: .25rem;
+}
+
+/* Bouton (tu gardes ton style bouton global si besoin) */
+.contactForm button {
+  text-decoration: none;
+  border: 0;
+  /* si tu veux un style bouton local, dé-commente :
+  border-radius: 9999px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  padding: 12px 18px;
+  */
+}
+
+.contactForm button:hover {
+  cursor: pointer;
+}
+
+/* Message de statut */
+.contactForm > p[aria-live="polite"] {
+  margin: 0;
+  font-size: .95rem;
+  grid-column: 1 / -1;            /* pleine largeur en mode grille */
+}
+
+/* ====== Responsive ====== */
+@media (min-width: 640px) {
+  .contactForm {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  /* Le bloc qui contient <textarea> occupe toute la largeur */
+  .contactForm > div:has(textarea) {
+    grid-column: 1 / -1;
+  }
+
+  /* Fallback si :has() n’est pas dispo : 5e bloc = message */
+  @supports not(selector(:has(*))) {
+    .contactForm > div:nth-of-type(5) { grid-column: 1 / -1; }
+  }
+
+  /* Le bouton et le statut en pleine largeur pour l'alignement */
+  .contactForm button {
+    grid-column: 1 / -1;
+  }
+}

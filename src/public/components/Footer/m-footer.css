@@ -1,0 +1,161 @@
+/**********************************************************************************************/
+/******************************************** footer ******************************************/
+/**********************************************************************************************/
+
+.footer {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    font-family: Open, sans-serif;
+    color: white;
+    background: linear-gradient(rgb(10, 62, 88) 5%, rgb(7, 41, 58));
+    margin-bottom: -5vw;
+}
+
+.footer > h1 {
+    margin-top: 10vw;
+    font-size: 6vw;
+}
+
+.footer__logo-info {
+    text-align: center;
+}
+
+.footer__link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50vw;
+    height: auto;
+    text-align: center;
+    align-items: center;
+}
+
+.footer__link__icon {
+	position: relative;
+    color: white;
+    font-size: 7vw;
+    opacity: .8;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.footer__link__icon:hover {
+	color: rgb(54, 178, 255);
+    opacity: 1;
+    transition: all .2s;
+}
+
+.footer__logo-caravelle {
+    margin-top: 10vw;
+    width: 50vw;
+    height: auto;
+    cursor: pointer;
+}
+
+.footer > p {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    font-size: 4.2vw;
+    line-height: 6vw;
+}
+
+.mail-link {
+    color: rgb(131, 207, 255) !important;
+}
+
+.mail-link:hover {
+    text-decoration: underline;
+}
+
+.footer__partenaires {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin-top: 10vw;
+    padding: 10vw 2vw 2vw 2vw;
+}
+
+.footer__partenaires__logo {
+    height: 15vw;
+    width: auto;
+    margin-bottom: 8vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.footer__copyright {
+    width: 100%;
+    height: auto;
+    padding: .25vw 7vw .25vw 7vw;
+    margin-bottom: 0;
+    bottom: 0;
+    font-size: 3.8vw;
+    line-height: 5vw;
+    background-color: black;
+}
+
+.footer__copyright__link {
+    color: rgb(131, 207, 255) !important;
+}
+
+#link1, #link2 {
+    text-decoration: underline !important;
+}
+
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 450px ****************************************/
+
+@media screen and (min-width: 451px) {
+
+    /**********************************************************************************************/
+    /********************************************* footer *****************************************/
+    /**********************************************************************************************/
+    
+    .footer > h1 {
+        margin-top: 5.926vw;
+        font-size: 3vw;
+    }
+    
+    .footer__link {
+        width: 25vw;
+    }
+    
+    .footer__link__icon {
+        font-size: 3.5vw;
+    }
+    
+    .footer__logo-caravelle {
+        margin-top: 5.25vw;
+        width: 20vw;
+    }
+
+    .footer > p {
+        font-size: 2.2vw;
+        line-height: 3.555vw;
+    }
+
+    .footer__partenaires {
+        padding: 8vw 5vw 3vw 5vw;
+    }
+
+    .footer__partenaires__logo {
+        height: 12vw;
+        margin-bottom: 5vw;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
+    }
+    
+    .footer__copyright {
+        padding: .15vw 7vw .15vw 7vw;
+        font-size: 2.2vw;
+        line-height: 3vw;
+    }  
+}

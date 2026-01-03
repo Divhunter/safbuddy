@@ -1,0 +1,101 @@
+# ------------------------------------------------------------
+# COMPRESSION (Brotli d'abord, sinon Deflate)
+# ------------------------------------------------------------
+<IfModule mod_brotli.c>
+  BrotliCompressionQuality 5
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css application/javascript application/json application/manifest+json image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json application/manifest+json image/svg+xml
+</IfModule>
+
+# ------------------------------------------------------------
+# TYPES & UTF-8 (utile pour manifest/json/svg/webp/avif/woff2)
+# ------------------------------------------------------------
+AddType image/avif .avif
+AddType image/webp .webp
+AddType image/svg+xml .svg
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+AddType application/json .json
+
+# ------------------------------------------------------------
+# CACHING
+# ------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML : pas de cache agressif (on veut récupérer les updates)
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # Assets fingerprintés (hash dans le nom) : 1 an + immutable
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 year"
+</IfModule>
+
+# Service Worker : JAMAIS mis en cache
+<FilesMatch "^service-worker\.js$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </IfModule>
+</FilesMatch>
+
+# HTML : éviter le cache navigateur
+<FilesMatch "\.(?:html)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </IfModule>
+</FilesMatch>
+
+# Assets statiques : cache long + immutable
+<FilesMatch "\.(?:webp|avif|png|jpe?g|gif|svg|woff2|js|css|pdf)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </IfModule>
+</FilesMatch>
+
+# Manifest / JSON : cache raisonnable (change moins souvent que HTML, plus souvent que assets hashés)
+<FilesMatch "\.(?:json|webmanifest)$">
+  <IfModule mod_headers.c>
+    Header set Cache-Control "public, max-age=86400"  # 1 jour
+  </IfModule>
+</FilesMatch>
+
+# ------------------------------------------------------------
+# CORS pour polices (si utilisées cross-origin)
+# ------------------------------------------------------------
+<FilesMatch "\.(?:woff2?)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
+
+# ------------------------------------------------------------
+# SÉCURITÉ (basics safe)
+# ------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "no-referrer-when-downgrade"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header set X-Frame-Options "SAMEORIGIN"
+  # Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self' https: data:;"
+</IfModule>
+
+# ------------------------------------------------------------
+# VARY (bonne mise en cache CDN)
+# ------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header append Vary "Accept-Encoding" env=!dont-vary
+</IfModule>

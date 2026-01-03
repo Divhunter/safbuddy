@@ -1,0 +1,117 @@
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 991px ****************************************/
+
+@media screen and (min-width: 992px) {
+
+    /**********************************************************************************************/
+    /********************************************* banner *****************************************/
+    /**********************************************************************************************/
+
+    .banner__title {
+        top: 35px;
+        font-size: 33px;
+        line-height: 55px;
+        letter-spacing: 3px;
+    }
+
+    .banner__liberte {
+        top: 150px;
+        font-size: 24px;
+        line-height: 35px;
+        letter-spacing: 2.5px;
+    }
+
+    .banner__programme {
+        top: 270px;
+        font-size: 22px;
+        letter-spacing: 1.5px;
+        padding-bottom: 15px;
+        border-bottom: 5px solid transparent;
+        transition: border-bottom .8s, color .8s;
+    }
+
+    .banner__programme:hover {
+        border-bottom: 5px solid rgb(54, 178, 255);
+	    transition: border-bottom .8s, color .8s;
+    }
+
+    .banner__logo-permis {
+        bottom: 25px;
+        height: 100px;
+    }
+
+    .banner__logo-qualiopi {
+        margin-right: 30px;
+    }
+
+    .banner__logo-ecq-label {
+        margin-right: 240px;
+    }
+}
+
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 1199px ****************************************/
+
+@media screen and (min-width: 1200px) {
+
+    /**********************************************************************************************/
+    /********************************************* banner *****************************************/
+    /**********************************************************************************************/
+
+    .banner {
+        height: 43vw;
+        padding-left: 4vw;
+    }
+
+    .banner-filtre {
+        height: 44vw;
+    }
+
+    .banner__title {
+        top: 4.6vw;
+        font-size: 2.5vw;
+        line-height: 4vw;
+    }
+
+    .banner__title__Vaulx {
+        font-weight: 400;
+    }
+
+    .banner__liberte {
+        margin-left: .1vw;
+        top: 14vw;
+        font-size: 1.55vw;
+        letter-spacing: .165vw;
+    }
+
+    .banner__programme {
+        top: 22vw;
+        font-size: 1.5vw;
+        letter-spacing: .123vw;
+        padding-bottom: 1.2vw;
+        border-bottom: .22vw solid transparent;
+    }
+
+    .banner__programme:hover {
+        border-bottom: .22vw solid rgb(54, 178, 255);
+	    transition: border-bottom .8s, color .8s;
+    }
+
+    .banner__picture2 {
+        top: -22vw;
+    }
+
+    .banner__logo-permis {
+        bottom: 5vw;
+        height: 7vw;
+    }
+
+    .banner__logo-qualiopi {
+        margin-right: 2vw;
+    }
+
+    .banner__logo-ecq-label {
+        bottom: 5vw;
+        margin-right: 16.5vw;
+    }
+}

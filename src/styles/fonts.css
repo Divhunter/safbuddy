@@ -1,0 +1,68 @@
+@font-face {
+    font-family: "Raleway-Light";
+    src: url("https://www.safbuddy.com/assets/fonts/Raleway-Light.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Raleway-Medium";
+    src: url("https://www.safbuddy.com/assets/fonts/Raleway-Medium.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Raleway-Regular";
+    src: url("https://www.safbuddy.com/assets/fonts/Raleway-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Raleway-SemiBold";
+    src: url("https://www.safbuddy.com/assets/fonts/Raleway-SemiBold.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("https://www.safbuddy.com/assets/fonts/OpenSans-VariableFont_wdth,wght.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Michroma-Regular";
+    src: url("https://www.safbuddy.com/assets/fonts/Michroma-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto-ExtraBold";
+    src: url("https://www.safbuddy.com/assets/fonts/Roboto-ExtraBold.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins-ExtraBold";
+    src: url("https://www.safbuddy.com/assets/fonts/Poppins-ExtraBold.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("https://www.safbuddy.com/assets/fonts/Poppins-Bold.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins-Black";
+    src: url("https://www.safbuddy.com/assets/fonts/Poppins-Black.woff2") format("woff2");
+    font-display: swap;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: "Raleway-Light", sans-serif;
+    font-display: swap;
+    color: white;
+    overflow-x: hidden;
+}

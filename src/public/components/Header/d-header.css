@@ -1,0 +1,339 @@
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 767px ****************************************/
+
+@media screen and (min-width: 768px) {
+
+    /**********************************************************************************************/
+    /********************************************* header *****************************************/
+    /**********************************************************************************************/
+
+	.navbar-open {
+		height: 66vw;
+	}
+
+	.navbar__menu-open {
+		height: 450px;
+	}
+
+	.navbar__square {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		top: 30px;
+		width: 50px;
+		height: auto;
+		cursor: pointer;
+	}
+
+	.navbar__square__bar {
+		position: relative;
+		justify-content: center;
+		flex-direction: column;
+		margin-top: 5px;
+		width: 50px;
+		height: 3px;
+	}
+
+	.navbar__square:hover > .bar-1 {
+		background-color: rgb(11, 100, 156);
+		transition: background-color .8s;
+	}
+
+	.navbar__square:hover > .bar-2 {
+		background-color: rgb(16, 112, 171);
+		transition: background-color .8s;
+	}
+
+	.navbar__square:hover > .bar-3 {
+		background-color: rgb(23, 126, 190);
+		transition: background-color .8s;
+	}
+
+	.navbar__square:hover > .bar-4 {
+		background-color: rgb(54, 178, 255);
+		transition: background-color .8s;
+	}
+
+	.bar-1 {
+		background-color: rgb(121, 121, 121);
+		transition: background-color .8s;
+	}
+
+	.bar-2 {
+		background-color: rgb(152, 152, 152);
+		transition: background-color .8s;
+	}
+
+	.bar-3 {
+		background-color: rgb(196, 196, 196);
+		transition: background-color .8s;
+	}
+
+	.bar-4 {
+		background-color: rgb(227, 227, 227);
+		transition: background-color .8s; 
+	}
+
+	.cross{
+		position: absolute;
+		text-align: center;
+		top: 30px;
+		width: 50px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		height: 32px;
+		font-size: 16px;
+		font-weight: 600;
+		font-family: Arial, Helvetica, sans-serif;
+		color: white;
+		transition: color .4s;
+		cursor: pointer;
+	}
+
+	.navbar__contact {
+		margin-right: 20px;
+		font-size: 19px;
+	}
+
+	.cross-bar {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 3px;
+		background: currentColor;
+		transform-origin: 50% 50%;  
+	}
+
+	.cross-bar:nth-child(1){ transform: translate(-50%, -50%) rotate(30deg); }
+	.cross-bar:nth-child(2){ transform: translate(-50%, -50%) rotate(-30deg); }
+	
+	.cross:hover {
+		color: rgb(255, 9, 29);
+		transition: color .4s;
+	}
+
+	.navbar__button-bars,
+	.navbar__button-x {
+		display: none;
+	}
+
+	.nav__menu__link {
+		top: 10px;
+		padding-left: 10vw;
+		line-height: 20px;
+		padding-bottom: 4px;
+		font-size: 15px;
+	}
+	
+	.nav__menu__link:hover {
+		padding-left: 15vw;
+		font-size: 20px;
+	}
+
+	.mobile-only {
+		display: block;
+	}
+}
+
+
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 991px ****************************************/
+
+@media screen and (min-width: 992px) {
+
+    /**********************************************************************************************/
+    /********************************************* header *****************************************/
+    /**********************************************************************************************/
+	
+	.navbar-open {
+		height: 700px;
+	}
+
+	.navbar__menu-open {
+		height: 500px;
+	}
+
+	.nav__menu__link {
+		line-height: 50px;
+		padding-left: 200px;
+		padding-bottom: 5px;
+		font-size: 20px;
+	}
+	
+	.nav__menu__link:hover {
+		padding-left: 240px;
+		font-size: 22px;
+	}
+
+	.navbar__contact {
+		position: absolute;
+		top: 34px;
+		margin-top: 0;
+		float: left;
+		margin-right: auto;
+		margin-left: 180px;
+	}
+
+	.navbar__onglets {
+		display: block;
+		top: 45px;
+		font-size: 14.5px;
+		font-weight: 400;
+		letter-spacing: .5px;
+		padding-bottom: 12px;
+	}
+
+	.onglet-labelisation {
+		right: 310px;
+	}
+
+	.onglet-docs {
+		right: 150px;
+	}
+
+	.onglet-avis {
+		right: 20px;
+	}
+
+	.white-style {
+		border-bottom: solid 3px transparent;
+	}
+
+	.white-style:hover {
+		border-bottom: solid 3px rgb(54, 178, 255);
+	}
+
+	.gray-style {
+		border-bottom: solid 3px transparent;
+	}
+
+	.gray-style:hover {
+		border-bottom: solid 3px rgb(54, 178, 255);
+	}
+
+	.mobile-only {
+		display: none;
+	}
+}
+
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 1199px ****************************************/
+
+@media screen and (min-width: 1200px) {
+
+    /**********************************************************************************************/
+    /********************************************* header *****************************************/
+    /**********************************************************************************************/
+	.navbar-closed {
+		height: 7.5vw;
+	}
+	
+	.navbar-open {
+		height: 54vw;
+	}
+
+	.navbar__logo-caravelle {
+		top: 1.3vw;
+		margin-left: 3.75vw;
+		width: 12vw;
+	}
+
+	menu {
+		top: 4.16vw;
+	}
+	
+	.navbar__menu {
+		margin-left: .41vw;
+	}
+	
+	.navbar__menu-open {
+		height: 41.66vw;
+	}
+	
+	.nav__menu__link {
+		font-weight: 500;
+		line-height: 2.8vw;
+		padding-left: 20vw;
+		padding-bottom: .11vw;
+		letter-spacing: .16vw;
+		font-size: 1.26vw;
+	}
+	
+	.nav__menu__link:hover {
+		padding-left: 21vw;
+		font-size: 1.43vw;
+	}
+
+	.navbar__contact {
+		top: 2.5vw;
+		margin-left: 18vw;
+		font-size: 1.2vw;
+		padding: .3vw .5vw .3vw .5vw;
+	}
+
+	.navbar__onglets {
+		display: block;
+		top: 3vw;
+		font-size: 1.13vw;
+		letter-spacing: .018vw;
+		padding-bottom: 1vw;
+	}
+
+	.onglet-labelisation {
+		right: 31.35vw;
+	}
+
+	.onglet-docs {
+		right: 17vw;
+	}
+
+	.onglet-avis {
+		right: 5vw;
+	}
+
+	.white-style {
+		border-bottom: solid .2vw transparent;
+	}
+
+	.white-style:hover {
+		border-bottom: solid .2vw rgb(54, 178, 255);
+	}
+
+	.gray-style {
+		border-bottom: solid .2vw transparent;
+	}
+
+	.gray-style:hover {
+		border-bottom: solid .2vw rgb(54, 178, 255);
+	}
+
+	.navbar__square {
+		top: 2.5vw;
+		width: 3vw;
+	}
+
+	.navbar__square__bar {
+		margin-top: .3vw;
+		width: 3vw;
+		height: .2vw;
+	}
+
+	.cross{
+		top: 2.5vw;
+		width: 3vw;
+		height: 2vw;
+	}
+
+	.cross-content {
+		margin-top: 1.08vw;
+	}
+
+	.cross-bar {
+		height: .2vw;
+	}
+
+	.mobile-only {
+		display: none;
+	}
+}

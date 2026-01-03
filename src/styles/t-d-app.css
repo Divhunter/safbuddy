@@ -1,0 +1,54 @@
+/************************************************************************************************************/
+/********************************************* media queries ************************************************/
+/********************************** New rules if the screen is at more 767px ********************************/
+
+@media screen and (min-width: 768px) {
+
+    header, 
+    section, 
+    article {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .programme-containt {
+        font-size: 1rem;  /* +10% */
+        --line: 1rem;       /* ajuste les espacements */
+    }
+
+    .programme-containt h3 {
+        font-size: 1.1em;
+    }
+}
+
+/************************************************************************************************************/
+/********************************************* media queries ************************************************/
+/********************************** New rules if the screen is at more 991px ********************************/
+
+@media screen and (min-width: 992px) {
+    
+    .programme-containt {
+        font-size: 1.1rem;  /* +10% */
+        --line: 1rem;       /* ajuste les espacements */
+    }
+
+    .programme-containt h3 {
+        font-size: 1.2em;
+    }
+}
+
+/************************************************************************************************************/
+/********************************************* media queries ************************************************/
+/********************************** New rules if the screen is at more 1199px ********************************/
+
+@media screen and (min-width: 1200px) {
+    
+    .programme-containt {
+        font-size: 1.2rem;  
+        --line: 1.14rem;    
+    }
+
+    .programme-containt h3 {
+        font-size: 1.3em;
+    }
+}

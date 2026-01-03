@@ -1,0 +1,14 @@
+# robots.txt — Production
+User-agent: *
+# (optionnel) bloque des répertoires s'ils existent réellement
+# Disallow: /admin/
+# Disallow: /server/
+# Disallow: /cgi-bin/
+
+# Évite les URLs avec paramètres de tracking
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid=*
+Disallow: /*?*gclid=*
+Disallow: /*?*ref=*
+
+Sitemap: https://www.safbuddy.com/sitemap.xml

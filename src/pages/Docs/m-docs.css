@@ -1,0 +1,28 @@
+.docs__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    z-index: 3000;
+}
+
+.docs__container__item {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgb(11, 63, 89), rgb(15, 83, 117));
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 3vw 5vw 3vw 5vw;
+    width: 100%;
+    border-radius: 3vw;
+    margin-bottom: 5vw;
+    filter: brightness(100%);
+    transition: filter .5s;
+}
+
+.docs__container__item:hover {
+    filter: brightness(130%);
+    transition: filter .5s;
+}

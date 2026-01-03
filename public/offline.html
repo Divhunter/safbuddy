@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Hors ligne — Safbuddy</title>
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --fg: #f5f5f7;
+      --muted: #a3a3a3;
+      --card: #151517;
+      --accent: #1e90ff;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(60% 80% at 50% 0%, #121214 0%, var(--bg) 60%);
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      max-width: 640px;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid #232327;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      text-align: center;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 12px;
+      display: block;
+      opacity: .95
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 8px 0 6px
+    }
+
+    p {
+      color: var(--muted);
+      margin: 8px 0 0;
+      line-height: 1.55
+    }
+
+    .tips {
+      margin-top: 14px;
+      font-size: .95rem
+    }
+
+    .btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 18px;
+      flex-wrap: wrap
+    }
+
+    button,
+    a.btn {
+      appearance: none;
+      border: 1px solid #2a2a2e;
+      background: #1a1a1d;
+      color: var(--fg);
+      padding: 10px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white
+    }
+
+    .small {
+      font-size: .85rem;
+      margin-top: 12px;
+      color: #8b8b8f
+    }
+
+    .ok {
+      color: #6ee7a8
+    }
+
+    .bad {
+      color: #fca5a5
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <!-- Petit logo inline (SVG) → aucun appel réseau -->
+    <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1">
+          <stop offset="0" stop-color="#1e90ff" />
+          <stop offset="1" stop-color="#00c2ff" />
+        </linearGradient>
+      </defs>
+      <circle cx="32" cy="32" r="30" fill="url(#g)" opacity=".85" />
+      <path d="M14 38c7-10 29-10 36 0" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" />
+      <circle cx="22" cy="39" r="4" fill="#fff" />
+      <circle cx="42" cy="39" r="4" fill="#fff" />
+    </svg>
+
+    <h1 id="title">Vous êtes hors ligne</h1>
+    <p id="status" aria-live="polite">Impossible de charger cette page sans connexion Internet.</p>
+
+    <div class="tips">
+      <p>Vérifiez votre connexion puis réessayez. Certaines pages déjà visitées restent disponibles grâce au mode hors
+        ligne.</p>
+    </div>
+
+    <div class="btns">
+      <button class="primary" id="retry">Réessayer</button>
+      <a class="btn" href="/" rel="nofollow">Aller à l’accueil</a>
+    </div>
+
+    <div class="small">
+      État du réseau :
+      <strong id="net" class="bad">hors ligne</strong>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+      const statusEl = $('status');
+      const netEl = $('net');
+
+      function update() {
+        const online = navigator.onLine;
+        netEl.textContent = online ? 'en ligne' : 'hors ligne';
+        netEl.className = online ? 'ok' : 'bad';
+        if (online) {
+          statusEl.textContent = 'Connexion retrouvée. Actualisation…';
+          // Recharge automatiquement dès qu’on repasse en ligne
+          setTimeout(() => location.reload(), 400);
+        } else {
+          statusEl.textContent = 'Impossible de charger cette page sans connexion Internet.';
+        }
+      }
+
+      $('retry').addEventListener('click', () => {
+        if (navigator.onLine) {
+          location.reload();
+        } else {
+          // Tentative faible coût : ping la racine; si OK → reload
+          fetch('/', { method: 'HEAD', cache: 'no-store' })
+            .then(() => location.reload())
+            .catch(() => update());
+        }
+      });
+
+      window.addEventListener('online', update);
+      window.addEventListener('offline', update);
+      update();
+    })();
+  </script>
+
+  <noscript>
+    <p style="text-align:center;color:#bbb;margin-top:12px">
+      JavaScript est requis pour relancer la page automatiquement.
+    </p>
+  </noscript>
+</body>
+
+</html>

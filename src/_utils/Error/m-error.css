@@ -1,0 +1,93 @@
+/**********************************************************************************************/
+/********************************************* error ******************************************/
+/**********************************************************************************************/
+
+.error {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding-bottom: 180vw;
+    background: linear-gradient(rgb(7, 41, 58), rgb(10, 62, 88));
+    color: white;
+    top: 0;
+    z-index: 2000;
+}
+
+.error__statut {
+    position: relative;
+    top: 5vw;
+    font-family: "OpenSans";
+    font-size: 20vw;
+    margin-bottom: 7vw;
+}
+
+.error__failled {
+    position: relative;
+    width: 50vw;
+    height: auto;
+}
+
+.error__subheader {
+    position: relative;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2vw;
+    font-family: "OpenSans";
+    font-size: 5vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(231, 244, 253);
+}
+
+.error__link {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: "OpenSans";
+    font-size: 5vw;
+    font-weight: 500;
+    letter-spacing: .2vw;
+    color: white;
+    transition: color .3s;
+}
+
+.error__link:hover {
+    color: rgb(54, 178, 255);
+    transition: color .3s;
+}
+
+.error__link:active {
+    color: white;
+}
+
+/********************************************* media queries ************************************************/
+/************************** New rules if the screen is at more 450px ****************************************/
+
+@media screen and (min-width: 451px) {
+
+    /**********************************************************************************************/
+    /********************************************* error ******************************************/
+    /**********************************************************************************************/
+
+    .error__statut {
+        top: -20px;
+        font-size: 80px;
+        margin-bottom: -17px;
+    }
+    
+    .error__failled {
+        width: 200px;
+    }
+    
+    .error__subheader {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    
+    .error__link {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+}
