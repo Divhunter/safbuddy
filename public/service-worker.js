@@ -2,7 +2,7 @@
 /* eslint-env serviceworker, worker */
 /* global globalThis */
 
-/* service-worker.js — Caravelle Auto-École */
+/* service-worker.js — Safbuddy */
 
 /**
  * Alias du global en Service Worker (évite les warnings sur `self`)
@@ -12,10 +12,10 @@
 const sw = /** @type {any} */ (globalThis);
 
 const VERSION = 'v4';
-const PRECACHE        = `caravelle-precache-${VERSION}`;
-const RUNTIME_ASSETS  = `caravelle-runtime-assets-${VERSION}`;
-const RUNTIME_IMGS    = `caravelle-runtime-imgs-${VERSION}`;
-const RUNTIME_FONTS   = `caravelle-runtime-fonts-${VERSION}`;
+const PRECACHE        = `safbuddy-precache-${VERSION}`;
+const RUNTIME_ASSETS  = `safbuddy-runtime-assets-${VERSION}`;
+const RUNTIME_IMGS    = `safbuddy-runtime-imgs-${VERSION}`;
+const RUNTIME_FONTS   = `safbuddy-runtime-fonts-${VERSION}`;
 
 const OFFLINE_URL = '/offline.html';
 

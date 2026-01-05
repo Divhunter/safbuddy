@@ -4,7 +4,7 @@ const Safinwork = () => {
 
     return (
         <div>
-            <p>Coming soon</p>
+            <p>API Safbuddy coming soon ...</p>
         </div>
     )
 }

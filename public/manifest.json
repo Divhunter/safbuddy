@@ -10,17 +10,7 @@
   "orientation": "portrait",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "description": "Caravelle Auto-École — 32 Rue François Rabelais, 69120 Vaulx-en-Velin. Permis B, conduite accompagnée, conduite supervisée, stage code accéléré, préparation examen, cours de conduite personnalisés à Lyon Est. Téléphone : 04 78 80 85 56.",
-  "icons": [
-    { "src": "/icon-192.webp", "sizes": "192x192", "type": "image/webp", "purpose": "any maskable" },
-    { "src": "/logo-icon.webp", "sizes": "288x288", "type": "image/webp", "purpose": "any maskable" },
-    { "src": "/icon-512.webp", "sizes": "512x512", "type": "image/webp", "purpose": "any maskable" }
-  ],
+  "description": "safbuddy",
   "categories": ["education", "automotive"],
-  "prefer_related_applications": false,
-  "shortcuts": [
-    { "name": "Appeler l’auto-école", "short_name": "Appeler", "url": "/contact?via=pwa#phone", "description": "Téléphoner au 04 78 80 85 56" },
-    { "name": "Tarifs & Forfaits", "short_name": "Tarifs", "url": "/programmes?via=pwa", "description": "Voir les offres et forfaits" },
-    { "name": "Prendre rendez-vous", "short_name": "RDV", "url": "/contact?via=pwa#rdv", "description": "Demander un rendez-vous" }
-  ]
+  "prefer_related_applications": false
 }
