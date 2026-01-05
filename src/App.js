@@ -5,24 +5,24 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { HelmetProvider } from 'react-helmet-async'
 import { Routes, Route } from 'react-router-dom'
-import Background from './public/components/Background'
-import Header from './public/components/Header'
+//import Background from './public/components/Background'
+//import Header from './public/components/Header'
 import Home from './pages/Home'
-import About from './public/components/About'
-import UnEuroEtCPF from './public/components/UnEuroEtCPF'
-import Contact from './public/components/Contact'
-import Docs from './pages/Docs'
-import Programmes from './pages/Programmes'
-import PermisB from './pages/PermisB'
-import PermisBEA from './pages/PermisBEA'
-import CACCetS from './pages/CACCetS'
-import PasserelleBABM from './pages/PasserelleBABM'
-import PostPermis from './pages/PostPermis'
-import Code from './pages/Code'
-import Footer from './public/components/Footer'
-import CGU from './public/components/CGU'
-import Error from './_utils/Error' 
-import ScrollToTop from './functions/ScrollToTop' 
+//import About from './public/components/About'
+//import UnEuroEtCPF from './public/components/UnEuroEtCPF'
+//import Contact from './public/components/Contact'
+//import Docs from './pages/Docs'
+//import Programmes from './pages/Programmes'
+//import PermisB from './pages/PermisB'
+//import PermisBEA from './pages/PermisBEA'
+//import CACCetS from './pages/CACCetS'
+//import PasserelleBABM from './pages/PasserelleBABM'
+//import PostPermis from './pages/PostPermis'
+//import Code from './pages/Code'
+//import Footer from './public/components/Footer'
+//import CGU from './public/components/CGU'
+//import Error from './_utils/Error' 
+//import ScrollToTop from './functions/ScrollToTop' 
 
 import './styles/m-app.css' 
 import './styles/t-d-app.css'
@@ -79,10 +79,10 @@ const App = () => {
   return (
     <div ref={scope}>
       <HelmetProvider>
-        <Header/>
+        {/*<Header/>*/}
         <Routes future={{ v7_relativeSplatPath: true }}>
           <Route exact path='/*' element={<Home />} />
-          <Route path='/Docs/*' element={<Docs />} />
+          {/*<Route path='/Docs/*' element={<Docs />} />
           <Route path='/Programmes/*' element={<Programmes />} />
           <Route path='/PermisB/*' element={<PermisB />} />
           <Route path='/PermisBEA/*' element={<PermisBEA />} />
@@ -91,15 +91,15 @@ const App = () => {
           <Route path='/PostPermis/*' element={<PostPermis />} />
           <Route path='/Code/*' element={<Code />} />
           <Route path='/CGU/*' element={<CGU />} />
-          <Route path='/*' element={<Error />} />
+          <Route path='/*' element={<Error />} />*/}
         </Routes>
-        <About/>
+        {/*<About/>
         <UnEuroEtCPF/>
         <Contact/>
         <Footer />
-        <Background/>
+        <Background/>*/}
       </HelmetProvider>
-      <ScrollToTop />
+      {/*<ScrollToTop />*/}
     </div>
   )
 }
