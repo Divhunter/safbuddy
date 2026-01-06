@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -30,6 +30,11 @@ import './styles/t-d-app.css'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const App = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0)
+      window.location.href = "https://safbuddycreation.wixsite.com/safbuddy";
+  }, [])
+
   const scope = useRef(null)
 
   useLayoutEffect(() => {
