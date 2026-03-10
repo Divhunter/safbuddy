@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "safbuddy",
-  "short_name": "safbuddy",
+  "name": "SAF’BUDDY",
+  "short_name": "SAF’BUDDY",
   "lang": "fr-FR",
   "dir": "ltr",
   "start_url": "/?utm_source=pwa",
@@ -10,7 +10,7 @@
   "orientation": "portrait",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "description": "safbuddy",
-  "categories": ["education", "automotive"],
+  "description": "SAF’BUDDY",
+  "categories": ["sécurité", "BTP"],
   "prefer_related_applications": false
 }
